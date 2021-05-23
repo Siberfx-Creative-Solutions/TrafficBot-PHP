@@ -3,9 +3,6 @@
 $proxy = getRandomProxy();
 $url = urlDecode($_GET['url']);
 if (strlen($url) < 12 )
-{
-$url = "https://www.youtube.com/embed/".$url."?controls=0&amp;start=".rand(4,8);
-}
 
 $viewer = "https://ytviewshack.herokuapp.com/viewer.php?url=";
 
