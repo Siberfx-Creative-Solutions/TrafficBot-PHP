@@ -4,7 +4,7 @@ $proxy = getRandomProxy();
 $url = urlDecode($_GET['url']);
 if (strlen($url) < 12 )
 
-$viewer = "https://ytviewshack.herokuapp.com/viewer.php?url=";
+$viewer = "https://trabott.herokuapp.com/viewer.php?url=";
 
 if (hasParam('loads'))
 {
@@ -12,7 +12,7 @@ $loads = $_GET['loads'];
 }
 else
 {
-$loads = 0;
+$loads = 1;
 }
 
 if(hasParam('submit'))
@@ -49,7 +49,7 @@ curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_REFERER, "https://www.youtube.com");
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_TIMEOUT_MS, 10000);
+curl_setopt($ch, CURLOPT_TIMEOUT_MS, 500);
 curl_setopt($ch, CURLOPT_USERAGENT,  $agent);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 $page = curl_exec($ch);
@@ -71,7 +71,7 @@ function hasParam($param)
 
 <html>
   <head>
-    <title>YTViewBot</title>
+    <title>Trabott</title>
   </head>
   <body>
   </body>
