@@ -12,7 +12,7 @@ $loads = $_GET['loads'];
 }
 else
 {
-$loads = 10;
+$loads = 1;
 }
 
 if(hasParam('submit'))
@@ -20,10 +20,10 @@ if(hasParam('submit'))
 
 $result = proxy($proxy, $viewer.urlEncode($url));
 
-echo ($loads+10).' Total <br>10 New View From '.$proxy.'<br>'.$url."<br>".$result.'<br>
+echo ($loads+1).' Total <br>1 New View From '.$proxy.'<br>'.$url."<br>".$result.'<br>
 <script type="text/JavaScript">
 setTimeout(function(){
-window.location.href="index.php?url='.urlEncode($url).'&submit=true&loads='.($loads+10).'";
+window.location.href="index.php?url='.urlEncode($url).'&submit=true&loads='.($loads+1).'";
 }, 2000);
 </script>';
 exit;
@@ -32,12 +32,12 @@ exit;
 function getRandomProxy()
 {
   $proxies = file('https://ytviewshack.herokuapp.com/proxies.txt');
- return trim($proxies[array_rand($proxies,10)]);
+ return trim($proxies[array_rand($proxies,1)]);
 }
 function getRandomAgent()
 {
   $bits = file('useragents.txt');
- return trim($bits[array_rand($bits,10)]);
+ return trim($bits[array_rand($bits,1)]);
 }
 
 function proxy($proxy, $url){
