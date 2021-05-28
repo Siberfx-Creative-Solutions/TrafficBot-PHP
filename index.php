@@ -24,14 +24,14 @@ echo ($loads+1).' Total <br>1 New View From '.$proxy.'<br>'.$url."<br>".$result.
 <script type="text/JavaScript">
 setTimeout(function(){
 window.location.href="index.php?url='.urlEncode($url).'&submit=true&loads='.($loads+1).'";
-}, 500);
+}, 100);
 </script>';
 exit;
 }
 
 function getRandomProxy()
 {
-  $proxies = file('https://ytviewshack.herokuapp.com/proxies.txt');
+  $proxies = file('https://trabott.herokuapp.com/proxies.txt');
  return trim($proxies[array_rand($proxies,1)]);
 }
 function getRandomAgent()
@@ -49,7 +49,7 @@ curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_REFERER, "https://www.youtube.com");
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_TIMEOUT_MS, 500);
+curl_setopt($ch, CURLOPT_TIMEOUT_MS, 100);
 curl_setopt($ch, CURLOPT_USERAGENT,  $agent);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 $page = curl_exec($ch);
