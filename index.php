@@ -24,7 +24,7 @@ echo ($loads+1).' Total <br>1 New View From '.$proxy.'<br>'.$url."<br>".$result.
 <script type="text/JavaScript">
 setTimeout(function(){
 window.location.href="index.php?url='.urlEncode($url).'&submit=true&loads='.($loads+1).'";
-}, 2000);
+}, 500);
 </script>';
 exit;
 }
@@ -49,7 +49,7 @@ curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_REFERER, "https://www.youtube.com");
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_TIMEOUT_MS, 50);
+curl_setopt($ch, CURLOPT_TIMEOUT_MS, 500);
 curl_setopt($ch, CURLOPT_USERAGENT,  $agent);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 $page = curl_exec($ch);
